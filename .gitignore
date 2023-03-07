@@ -4,6 +4,7 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
+.*.hcl
 
 # Crash log files
 crash.log
@@ -27,3 +28,6 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+
+# specific IP address in my-ip.tf as a variable since sandbox env doesnt allow the sg to be open to the whole internet.
+my-ip.tf
