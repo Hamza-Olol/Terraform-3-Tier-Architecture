@@ -31,3 +31,6 @@ override.tf.json
 
 # specific IP address in my-ip.tf as a variable since sandbox env doesnt allow the sg to be open to the whole internet.
 my-ip.tf
+
+# Specific to my env, remove as you please
+commands.txt
