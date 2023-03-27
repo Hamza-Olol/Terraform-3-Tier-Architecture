@@ -1,7 +1,4 @@
-
-
-
-
+## Security Group Outputs
 
 # Security Group ID outputs
 output "public_sg_id" {
