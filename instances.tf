@@ -7,12 +7,14 @@ module "public_instance" {
   name = "instance-${each.key}"
   # update the values below with data._.id values
   ami                    = "ami-ebd02392"
-  instance_type          = "t2.micro"
+  instance_type          = var.instance_type
   key_name               = var.key_pair
   monitoring             = true
   vpc_security_group_ids = module.public_sg.security_group_id
   subnet_id              = module.vpc.public_subnets
-  tags                   = "{var.environment}-instance"
+  tags                   = {
+    Name = "{var.environment}-instance"
+  }
 }
 
 module "private_instance" {
@@ -29,7 +31,9 @@ module "private_instance" {
   monitoring             = true
   vpc_security_group_ids = module.private_sg.security_group_id
   subnet_id              = module.vpc.private_subnets
-  tags                   = "{var.environment}-instance"
+  tags                   = {
+    Name = "{var.environment}-instance"
+  }
 }
 
 module "db_instance" {
@@ -46,5 +50,7 @@ module "db_instance" {
   monitoring             = true
   vpc_security_group_ids = module.private_sg.security_group_id
   subnet_id              = module.vpc.database_subnets
-  tags                   = "{var.environment}-instance"
+  tags                   = {
+    Name = "{var.environment}-instance"
+  }
 }

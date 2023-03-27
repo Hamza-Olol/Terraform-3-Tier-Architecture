@@ -23,7 +23,7 @@ module "public_sg" {
   # Ingress Rules & CIDR Blocks
   ingress_rules = ["ssh-tcp", "http-80-tcp"]
   # Ingress from personal ip address as to not open it to the whole internet
-  ingress_cidr_blocks = var.my-ip
+  ingress_cidr_blocks = [var.my-ip]
   # Egress Rule - all-all open
   egress_rules = ["all-all"]
   tags = {
