@@ -38,3 +38,18 @@ variable "owner" {
   type        = string
   default     = "ho"
 }
+
+variable "public_instance_name" {
+  description = "Public instance name"
+  type        = string
+}
+
+variable "private_instance_name" {
+  description = "Private instance name"
+  type        = string
+}
+
+variable "ec2-ami" {
+  description = "Private instance name"
+  type        = string
+}
