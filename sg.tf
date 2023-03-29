@@ -1,7 +1,7 @@
 module "private_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
-  name        = "HO-private-sg"
+  name        = "ho-private-sg"
   description = "Security group for the private subnet"
   vpc_id      = module.vpc.vpc_id
   # Ingress Rules & CIDR Blocks
@@ -10,14 +10,14 @@ module "private_sg" {
   # Egress Rule - all-all open
   egress_rules = ["all-all"]
   tags = {
-    Name = "HO-{Var.environment}-private_sg "
+    Name = "ho-{Var.environment}-private_sg "
   }
 }
 
 module "public_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
-  name        = "HO-public-sg"
+  name        = "ho-public-sg"
   description = "Security group for the public subnet"
   vpc_id      = module.vpc.vpc_id
   # Ingress Rules & CIDR Blocks
@@ -26,7 +26,5 @@ module "public_sg" {
   ingress_cidr_blocks = [var.my-ip]
   # Egress Rule - all-all open
   egress_rules = ["all-all"]
-  tags = {
-    Name = "HO-{Var.environment}-public_sg "
-  }
+  tags     = local.common_tags
 }

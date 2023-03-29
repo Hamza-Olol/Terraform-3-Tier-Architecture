@@ -19,3 +19,22 @@ variable "instance_type" {
   type        = string
   description = "Instance type"
 }
+
+
+variable "private_instance_count" {
+  description = "AWS EC2 Private Instances Count"
+  type        = number
+  default     = 2
+}
+
+variable "public_instance_count" {
+  description = "AWS EC2 Public Instances Count"
+  type        = number
+  default     = 2
+}
+
+variable "owner" {
+  description = "owner is ho"
+  type        = string
+  default     = "ho"
+}
