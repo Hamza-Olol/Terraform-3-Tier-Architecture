@@ -1,14 +1,3 @@
-variable "region-name" {
-  type        = string
-  description = "AWS regions"
-  default     = "eu-west-1"
-}
-
-variable "environment" {
-  type        = string
-  description = "Dev, Test or Prod env"
-}
-
 variable "key_pair" {
   type        = string
   description = "Dev, Test or Prod env"
@@ -20,7 +9,6 @@ variable "instance_type" {
   description = "Instance type"
 }
 
-
 variable "private_instance_count" {
   description = "AWS EC2 Private Instances Count"
   type        = number
@@ -31,12 +19,6 @@ variable "public_instance_count" {
   description = "AWS EC2 Public Instances Count"
   type        = number
   default     = 2
-}
-
-variable "owner" {
-  description = "owner is ho"
-  type        = string
-  default     = "ho"
 }
 
 variable "public_instance_name" {

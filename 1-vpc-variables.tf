@@ -10,9 +10,8 @@ variable "vpc_cidr_block" {
   type        = string
 }
 
-
 # VPC Availability Zones
-variable "vpc_availability_zones" {
+variable "availability_zones" {
   description = "VPC Availability Zones"
   type        = list(string)
 }

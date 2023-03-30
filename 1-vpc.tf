@@ -4,7 +4,7 @@ module "vpc" {
   name    = var.vpc_name
   cidr    = var.vpc_cidr_block
 
-  azs             = var.vpc_availability_zones
+  azs             = var.availability_zones
   # Private subnets
   public_subnets = var.vpc_public_subnets
   # Public subnets
@@ -30,4 +30,6 @@ module "vpc" {
   database_subnet_tags = {
     Type = "private database subnets"
   }
+
+  vpc_tags = local.common_tags
 }

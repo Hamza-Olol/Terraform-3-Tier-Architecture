@@ -1,10 +1,9 @@
 module "private_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "2.17.0"
-  # version = "3.3.0"
   depends_on             = [
     module.vpc,
-    module.private_sg,
+    module.private_sg
   ]
 
   name = var.private_instance_name
